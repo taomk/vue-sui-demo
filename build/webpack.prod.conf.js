@@ -29,13 +29,14 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    // 压缩代码
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    // extract css into its own file
+    // 提取css为单文件
     new ExtractTextPlugin(utils.assetsPath('css/[name].[contenthash].css')),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -56,7 +57,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       // necessary to consistently work with multiple chunks via CommonsChunkPlugin
       chunksSortMode: 'dependency'
     }),
-    // split vendor js into its own file
+    // 公共模块的提取
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module, count) {
