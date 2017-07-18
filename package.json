@@ -19,7 +19,6 @@
     "vue-router": "^0.7.13"
   },
   "devDependencies": {
-    // babel 一系列包，用来解析ES6语法
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-runtime": "^6.9.0",
